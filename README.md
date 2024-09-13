@@ -57,9 +57,9 @@ This will automatically create [admin actions](https://docs.djangoproject.com/en
 ## Example
 
 Here's an example of what it might look like for a simple `Homework` model:  
-![Example auto actions](https://github.com/Flexonze/django-auto-actions/blob/main/images/example_actions.png)  
+![Example auto actions](https://github.com/Flexonze/django-auto-actions/raw/main/images/example_actions.png)  
 And will display a success message like this:  
-![Example success message](https://github.com/Flexonze/django-auto-actions/blob/main/images/example_success_message.png)
+![Example success message](https://github.com/Flexonze/django-auto-actions/raw/main/images/example_success_message.png)
 
 
 ## Support & Contributing

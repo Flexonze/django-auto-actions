@@ -1,7 +1,7 @@
 from pathlib import Path
 from setuptools import setup, find_packages
 
-VERSION = "0.1.2"
+VERSION = "0.1.3"
 DESCRIPTION = "Automatically generates Django admin actions based on your model's fields"
 this_directory = Path(__file__).parent
 LONG_DESCRIPTION = (this_directory / "README.md").read_text()
