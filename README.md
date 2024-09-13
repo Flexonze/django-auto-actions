@@ -1,11 +1,11 @@
 # Django Auto Actions
 
-Generates Django admin actions based on your model's fields
+Automatically generates Django admin actions based on your model's fields
 
 
 ## Installation
 
-Use [pip](https://pip.pypa.io/en/stable/) to install django-auto-actions
+Install the package using [pip](https://pip.pypa.io/en/stable/)
 
 ```bash
   pip install django-auto-actions
@@ -30,12 +30,12 @@ class YourModelAdmin(AutoActionsModelAdmin):
 or **Using the mixin (AutoActionsMixin)**
 
 ```python
-from django.contrib import admin
+from django.contrib.admin import ModelAdmin
 from django_auto_actions import AutoActionsMixin
 
 
 @admin.register(YourModel)
-class YourModelAdmin(AutoActionsMixin, admin.ModelAdmin):
+class YourModelAdmin(AutoActionsMixin, ModelAdmin):
     ...
 ```
 
@@ -43,7 +43,7 @@ This will automatically create [admin actions](https://docs.djangoproject.com/en
 
 ```python
 @admin.register(YourModel)
-class YourModelAdmin(AutoActionsMixin, admin.ModelAdmin):
+class YourModelAdmin(AutoActionsMixin, ModelAdmin):
     exclude_auto_actions = ["is_example", "created_at"]
 ```
 
