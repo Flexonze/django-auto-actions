@@ -1,5 +1,9 @@
 # Django Auto Actions
 
+[![PyPI](https://img.shields.io/pypi/v/django-auto-actions?style=flat-square)](https://pypi.python.org/pypi/django-auto-actions/)
+[![PyPI - Python Version](https://img.shields.io/pypi/pyversions/django-auto-actions?style=flat-square)](https://pypi.python.org/pypi/django-auto-actions/)
+[![PyPI - License](https://img.shields.io/pypi/l/django-auto-actions?style=flat-square)](https://pypi.python.org/pypi/django-auto-actions/)
+
 Automatically generates Django admin actions based on your model's fields
 
 
@@ -8,15 +12,15 @@ Automatically generates Django admin actions based on your model's fields
 Install the package using [pip](https://pip.pypa.io/en/stable/)
 
 ```bash
-  pip install django-auto-actions
+pip install django-auto-actions
 ```
 
 
 ## Usage
 
-There are two ways to integrate django-auto-actions into your Django admin
+There are two ways to integrate django-auto-actions into your project:
 
-**Using AutoActionsModelAdmin**
+**Use AutoActionsModelAdmin** (instead of ModelAdmin)
 
 ```python
 from django_auto_actions import AutoActionsModelAdmin
@@ -27,7 +31,7 @@ class YourModelAdmin(AutoActionsModelAdmin):
     ...
 ```
 
-or **Using the mixin (AutoActionsMixin)**
+or **Use the AutoActionsMixin mixin**
 
 ```python
 from django.contrib.admin import ModelAdmin
@@ -39,7 +43,7 @@ class YourModelAdmin(AutoActionsMixin, ModelAdmin):
     ...
 ```
 
-This will automatically create [admin actions](https://docs.djangoproject.com/en/dev/ref/contrib/admin/actions/#admin-actions) for your model's [BooleanFields](https://docs.djangoproject.com/fr/4.2/ref/models/fields/#booleanfield), [DateTimeFields](https://docs.djangoproject.com/fr/4.2/ref/models/fields/#datetimefield), [DateFields](https://docs.djangoproject.com/fr/4.2/ref/models/fields/#datefield) and [TimeFields](https://docs.djangoproject.com/fr/4.2/ref/models/fields/#timefield). if you don't want auto-action on certain fields, you can define the `exclude_auto_actions` attribute.
+If you don't want auto actions on some fields, you can set the `exclude_auto_actions` attribute.
 
 ```python
 @admin.register(YourModel)
@@ -47,8 +51,15 @@ class YourModelAdmin(AutoActionsMixin, ModelAdmin):
     exclude_auto_actions = ["is_example", "created_at"]
 ```
 
-Here's an example of what it might look like:  
-- TODO: Add a screenshot here :)
+This will automatically create [admin actions](https://docs.djangoproject.com/en/dev/ref/contrib/admin/actions/#admin-actions) for your model's [BooleanFields](https://docs.djangoproject.com/fr/4.2/ref/models/fields/#booleanfield), [DateTimeFields](https://docs.djangoproject.com/fr/4.2/ref/models/fields/#datetimefield), [DateFields](https://docs.djangoproject.com/fr/4.2/ref/models/fields/#datefield) and [TimeFields](https://docs.djangoproject.com/fr/4.2/ref/models/fields/#timefield).
+
+
+## Example
+
+Here's an example of what it might look like for a simple `Homework` model:  
+![Example auto actions](./images/example_actions.png)  
+And will display a success message like this:
+![Example success message](./images/example_success_message.png)
 
 
 ## Support & Contributing
