@@ -31,11 +31,11 @@ class AutoActionsMixin:
     ```
 
     This will add the following actions:
-    - Set is_active to True
     - Set is_active to False
     - Set is_active to None
-    - Set submitted_at to now
+    - Set is_active to True
     - Set submitted_at to None
+    - Set submitted_at to now
     """
 
     def get_actions(self, request):
@@ -112,7 +112,35 @@ class AutoActionsMixin:
 
 class AutoActionsModelAdmin(AutoActionsMixin, admin.ModelAdmin):
     """
-    A ModelAdmin subclass that includes the AutoActionsMixin.
+    A ModelAdmin subclass that includes the AutoActionsMixin to add auto actions.
+
+    Usage:
+    1. Replace `admin.ModelAdmin` with `AutoActionsModelAdmin` in your ModelAdmin subclass.
+    2. Define a list of fields to exclude from auto actions in the `exclude_auto_actions` attribute.
+
+    Example:
+    ```python
+    from django.db import models
+    from django.contrib import admin
+    from django_auto_actions import AutoActionsModelAdmin
+
+    class MyModel(models.Model):
+        name = models.CharField(max_length=255)
+        is_active = models.BooleanField(null=True, blank=True)
+        submitted_at = models.DateTimeField(null=True, blank=True)
+        created_at = models.DateTimeField(auto_now_add=True)
+
+    @admin.register(MyModel)
+    class MyModelAdmin(AutoActionsModelAdmin):
+        exclude_auto_actions = ["created_at"]
+    ```
+
+    This will add the following actions:
+    - Set is_active to False
+    - Set is_active to None
+    - Set is_active to True
+    - Set submitted_at to None
+    - Set submitted_at to now
     """
 
     pass
