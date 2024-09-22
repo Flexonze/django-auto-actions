@@ -2,3 +2,4 @@ django>=4.2
 setuptools
 build
 twine
+ruff

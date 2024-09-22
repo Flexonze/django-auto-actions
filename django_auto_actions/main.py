@@ -1,7 +1,7 @@
-from django.db.models import BooleanField, DateTimeField, DateField, TimeField
+from django.contrib import admin, messages
+from django.db.models import BooleanField, DateField, DateTimeField, TimeField
 from django.utils import timezone
 from django.utils.translation import gettext_lazy as _
-from django.contrib import messages, admin
 from django.utils.translation import ngettext
 
 

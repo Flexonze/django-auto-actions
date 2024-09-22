@@ -3,6 +3,7 @@
 [![PyPI](https://img.shields.io/pypi/v/django-auto-actions?style=flat-square)](https://pypi.python.org/pypi/django-auto-actions/)
 [![PyPI - Python Version](https://img.shields.io/pypi/pyversions/django-auto-actions?style=flat-square)](https://pypi.python.org/pypi/django-auto-actions/)
 [![PyPI - License](https://img.shields.io/pypi/l/django-auto-actions?style=flat-square)](https://pypi.python.org/pypi/django-auto-actions/)
+[![Ruff](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/astral-sh/ruff/main/assets/badge/v2.json)](https://github.com/astral-sh/ruff)
 
 Automatically generates Django admin actions based on your model's fields
 
