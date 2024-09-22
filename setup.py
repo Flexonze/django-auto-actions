@@ -2,7 +2,7 @@ from pathlib import Path
 
 from setuptools import find_packages, setup
 
-VERSION = "0.1.7"
+VERSION = "1.0.0"
 DESCRIPTION = (
     "Automatically generates Django admin actions based on your model's fields"
 )
