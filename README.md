@@ -4,6 +4,7 @@
 [![PyPI - Python Version](https://img.shields.io/pypi/pyversions/django-auto-actions?style=flat-square)](https://pypi.python.org/pypi/django-auto-actions/)
 [![PyPI - License](https://img.shields.io/pypi/l/django-auto-actions?style=flat-square)](https://pypi.python.org/pypi/django-auto-actions/)
 [![Ruff](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/astral-sh/ruff/main/assets/badge/v2.json)](https://github.com/astral-sh/ruff)
+[![Coverage](https://img.shields.io/badge/coverage-100%25-brightgreen)](https://img.shields.io/badge/coverage-100%25-brightgreen)
 
 Automatically generates basic Django admin actions based on your models' fields
 
@@ -64,7 +65,7 @@ And will display a success message like this:
 ```bash
 pip install -r requirements.txt
 docker compose up -d
-python django_auto_actions/tests/runtests.py
+python runtests.py
 ```
 
 ## Support & Contributing

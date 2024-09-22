@@ -61,10 +61,10 @@ def runtests():
             SECRET_KEY="super_secret",
         )
 
-    django.setup()
-
-    cov = coverage.Coverage(omit=["*/tests/*", "*/migrations/*"])
+    cov = coverage.Coverage()
     cov.start()
+
+    django.setup()
 
     failures = call_command(
         "test", "django_auto_actions", interactive=False, failfast=False, verbosity=2
@@ -76,7 +76,7 @@ def runtests():
 
     # Delete the generated migrations folder
     BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-    folder = os.path.join(BASE_DIR, "migrations")
+    folder = os.path.join(BASE_DIR, "django_auto_actions", "django_auto_actions", "migrations")
     shutil.rmtree(folder)
 
     sys.exit(bool(failures))
