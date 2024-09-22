@@ -20,7 +20,7 @@ setup(
     url="https://github.com/Flexonze/django-auto-actions",
     packages=find_packages(),
     include_package_data=True,
-    python_requires=">=3.10",
+    python_requires=">=3.9",
     install_requires=[
         "Django>=4.2",
     ],
@@ -30,6 +30,7 @@ setup(
         "Intended Audience :: Developers",
         "Operating System :: OS Independent",
         "Programming Language :: Python",
+        "Programming Language :: Python :: 3.9",
         "Programming Language :: Python :: 3.10",
         "Programming Language :: Python :: 3.11",
         "Programming Language :: Python :: 3.12",

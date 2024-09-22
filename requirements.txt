@@ -1,5 +1,8 @@
 django>=4.2
+psycopg[binary]
+coverage
 setuptools
 build
 twine
 ruff
+-e .

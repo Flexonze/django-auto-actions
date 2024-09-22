@@ -59,6 +59,14 @@ Here's an example of what it might look like for a simple `Homework` model:
 And will display a success message like this:  
 ![Example success message](https://github.com/Flexonze/django-auto-actions/raw/main/images/example_success_message.png)
 
+## Running Tests
+
+```bash
+pip install -r requirements.txt
+docker compose up -d
+python django_auto_actions/tests/runtests.py
+```
+
 ## Support & Contributing
 
 If you like it, please consider giving this project a star. If you’re using the package, let me know! You can also [create an issue](https://github.com/Flexonze/django-auto-actions/issues/new) for any problems or suggestions. PRs are always welcome!
