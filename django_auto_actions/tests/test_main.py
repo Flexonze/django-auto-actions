@@ -1,9 +1,9 @@
 from django.contrib import admin, messages
 from django.contrib.auth.models import AnonymousUser
+from django.contrib.messages import get_messages
 from django.core.management import call_command
 from django.db import models
 from django.test import RequestFactory, TestCase
-from django.contrib.messages import get_messages
 
 from django_auto_actions.main import AutoActionsMixin
 
@@ -86,12 +86,13 @@ class AutoActionsMixinTest(TestCase):
                 self.assertEqual(instance1.is_approved, state == "True")
                 self.assertEqual(instance2.is_approved, state == "True")
 
-            expected_message = f"Successfully updated 2 test models to is_approved = {state}"
+            expected_message = (
+                f"Successfully updated 2 test models to is_approved = {state}"
+            )
             message = list(get_messages(self.request))[message_index]
             message_index += 1
 
             self.assertEqual(message.message, expected_message)
-
 
     def test_datetime_fields_actions(self):
         instance1 = TestModel.objects.create(submitted_at=None)
@@ -117,12 +118,13 @@ class AutoActionsMixinTest(TestCase):
                 self.assertIsNotNone(instance1.submitted_at)
                 self.assertIsNotNone(instance2.submitted_at)
 
-            expected_message = f"Successfully updated 2 test models to submitted_at = {state}"
+            expected_message = (
+                f"Successfully updated 2 test models to submitted_at = {state}"
+            )
             message = list(get_messages(self.request))[message_index]
             message_index += 1
 
             self.assertEqual(message.message, expected_message)
-
 
     def test_date_fields_actions(self):
         instance1 = TestModel.objects.create(due_date=None)
@@ -148,7 +150,9 @@ class AutoActionsMixinTest(TestCase):
                 self.assertIsNotNone(instance1.due_date)
                 self.assertIsNotNone(instance2.due_date)
 
-            expected_message = f"Successfully updated 2 test models to due_date = {state}"
+            expected_message = (
+                f"Successfully updated 2 test models to due_date = {state}"
+            )
             message = list(get_messages(self.request))[message_index]
             message_index += 1
 
@@ -178,7 +182,9 @@ class AutoActionsMixinTest(TestCase):
                 self.assertIsNotNone(instance1.presentation_time)
                 self.assertIsNotNone(instance2.presentation_time)
 
-            expected_message = f"Successfully updated 2 test models to presentation_time = {state}"
+            expected_message = (
+                f"Successfully updated 2 test models to presentation_time = {state}"
+            )
             message = list(get_messages(self.request))[message_index]
             message_index += 1
 
