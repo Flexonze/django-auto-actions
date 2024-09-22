@@ -1,8 +1,8 @@
 import os
 import shutil
 import sys
-import coverage
 
+import coverage
 import django
 from django.conf import settings
 from django.core.management import call_command
@@ -57,7 +57,7 @@ def runtests():
                 },
             ],
             DEFAULT_AUTO_FIELD="django.db.models.BigAutoField",
-            MESSAGE_STORAGE='django.contrib.messages.storage.cookie.CookieStorage',
+            MESSAGE_STORAGE="django.contrib.messages.storage.cookie.CookieStorage",
             SECRET_KEY="super_secret",
         )
 

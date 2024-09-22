@@ -1,9 +1,10 @@
+from django.contrib import admin, messages
+from django.contrib.auth.models import AnonymousUser
 from django.core.management import call_command
 from django.db import models
-from django.contrib import admin, messages
-from django.test import TestCase, RequestFactory
+from django.test import RequestFactory, TestCase
+
 from django_auto_actions.main import AutoActionsMixin
-from django.contrib.auth.models import AnonymousUser
 
 
 class TestModel(models.Model):
@@ -13,8 +14,8 @@ class TestModel(models.Model):
         app_label = "django_auto_actions"
 
 
-call_command('makemigrations', 'django_auto_actions')
-call_command('migrate', run_syncdb=True)
+call_command("makemigrations", "django_auto_actions")
+call_command("migrate", run_syncdb=True)
 
 
 @admin.register(TestModel)
@@ -27,7 +28,7 @@ class AutoActionsMixinTest(TestCase):
         self.model_admin = TestModelAdmin(TestModel, admin.site)
         self.model_admin.model = TestModel
 
-        self.request = RequestFactory().get('/admin/')
+        self.request = RequestFactory().get("/admin/")
         self.request.user = AnonymousUser()
         self.request._messages = messages.storage.default_storage(self.request)
 
