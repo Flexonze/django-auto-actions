@@ -74,12 +74,15 @@ def runtests():
     cov.save()
     cov.report()
 
-    # Delete the generated migrations folder
+    # Safely delete the generated migrations folder
     BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
     folder = os.path.join(
         BASE_DIR, "django_auto_actions", "django_auto_actions", "migrations"
     )
-    shutil.rmtree(folder)
+    try:
+        shutil.rmtree(folder)
+    except FileNotFoundError:
+        print(f"Folder {folder} does not exist. Skipping deletion.")
 
     sys.exit(bool(failures))
 

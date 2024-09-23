@@ -68,6 +68,19 @@ docker compose up -d
 python runtests.py
 ```
 
+## Running ruff (linting & formatting)
+
+```bash
+pip install -r requirements.txt
+ruff check
+```
+
+You can also run `ruff fix` to automatically fix some of the issues.
+
+```bash
+ruff check --fix
+```
+
 ## Support & Contributing
 
 If you like it, please consider giving this project a star. If you’re using the package, let me know! You can also [create an issue](https://github.com/Flexonze/django-auto-actions/issues/new) for any problems or suggestions. PRs are always welcome!
@@ -75,3 +88,7 @@ If you like it, please consider giving this project a star. If you’re using th
 ## Authors
 
 - **Félix Gravel** — [@Flexonze](https://www.github.com/flexonze)
+
+## License
+
+[MIT](LICENSE.txt) © [Félix Gravel](https://github.com/Flexonze)
