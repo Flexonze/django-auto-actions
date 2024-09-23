@@ -3,6 +3,8 @@ omit =
     */tests/*
     */migrations/*
     */__init__.py
+    setup.py
+    runtests.py
 
 [report]
 show_missing = True
