@@ -1,5 +1,5 @@
 ## Description
-This PR add this and that and whatever...
+This PR adds this and that and whatever...
 
 ## Related Issue:
 Closes/Resolves ####
